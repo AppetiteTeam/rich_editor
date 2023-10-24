@@ -103,6 +103,7 @@ class RichEditorState extends State<RichEditor> {
             },
             onLoadStop: (controller, link) async {
               if (link!.path != 'blank') {
+                _controller ??= controller;
                 javascriptExecutor.init(_controller!);
                 await _setInitialValues();
                 _addJSListener();
