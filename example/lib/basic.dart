@@ -79,17 +79,6 @@ class BasicDemo extends StatelessWidget {
 
         // You can return a Link (maybe you need to upload the image to your
         // storage before displaying in the editor or you can also use base64
-        getImageUrl: (image) {
-          String link = 'https://avatars.githubusercontent.com/u/24323581?v=4';
-          String base64 = base64Encode(image.readAsBytesSync());
-          String base64String = 'data:image/png;base64, $base64';
-          return base64String;
-        },
-        getVideoUrl: (video) {
-          String link = 'https://file-examples-com.github.io/uploads/2017/'
-              '04/file_example_MP4_480_1_5MG.mp4';
-          return link;
-        },
       ),
     );
   }

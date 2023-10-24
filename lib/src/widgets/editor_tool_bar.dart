@@ -13,16 +13,10 @@ import 'font_size_dialog.dart';
 import 'heading_dialog.dart';
 
 class EditorToolBar extends StatelessWidget {
-  final Function(File image)? getImageUrl;
-  final Function(File video)? getVideoUrl;
   final JavascriptExecutorBase javascriptExecutor;
-  final bool? enableVideo;
 
   EditorToolBar({
-    this.getImageUrl,
-    this.getVideoUrl,
     required this.javascriptExecutor,
-    this.enableVideo,
   });
 
   @override
@@ -61,8 +55,7 @@ class EditorToolBar extends StatelessWidget {
                         return InsertLinkDialog();
                       },
                     );
-                    if (link != null)
-                      await javascriptExecutor.insertLink(link[0], link[1]);
+                    if (link != null) await javascriptExecutor.insertLink(link[0], link[1]);
                   },
                 ),
                 TabButton(
@@ -140,8 +133,7 @@ class EditorToolBar extends StatelessWidget {
                       } else if (command == 'blockquote') {
                         await javascriptExecutor.setBlockQuote();
                       } else {
-                        await javascriptExecutor
-                            .setHeading(int.tryParse(command)!);
+                        await javascriptExecutor.setHeading(int.tryParse(command)!);
                       }
                     }
                   },
@@ -160,8 +152,7 @@ class EditorToolBar extends StatelessWidget {
                           return FontsDialog();
                         },
                       );
-                      if (command != null)
-                        await javascriptExecutor.setFontName(command);
+                      if (command != null) await javascriptExecutor.setFontName(command);
                     },
                   ),
                 ),
@@ -176,9 +167,7 @@ class EditorToolBar extends StatelessWidget {
                         return FontSizeDialog();
                       },
                     );
-                    if (command != null)
-                      await javascriptExecutor
-                          .setFontSize(int.tryParse(command)!);
+                    if (command != null) await javascriptExecutor.setFontSize(int.tryParse(command)!);
                   },
                 ),
                 TabButton(
@@ -191,8 +180,7 @@ class EditorToolBar extends StatelessWidget {
                         return ColorPickerDialog(color: Colors.blue);
                       },
                     );
-                    if (color != null)
-                      await javascriptExecutor.setTextColor(color);
+                    if (color != null) await javascriptExecutor.setTextColor(color);
                   },
                 ),
                 TabButton(
@@ -205,8 +193,7 @@ class EditorToolBar extends StatelessWidget {
                         return ColorPickerDialog(color: Colors.blue);
                       },
                     );
-                    if (color != null)
-                      await javascriptExecutor.setTextBackgroundColor(color);
+                    if (color != null) await javascriptExecutor.setTextBackgroundColor(color);
                   },
                 ),
                 TabButton(
@@ -275,8 +262,7 @@ class EditorToolBar extends StatelessWidget {
                         return CheckDialog();
                       },
                     );
-                    if (text != null)
-                      await javascriptExecutor.insertCheckbox(text);
+                    if (text != null) await javascriptExecutor.insertCheckbox(text);
                   },
                 ),
 
